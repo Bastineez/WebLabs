@@ -1,0 +1,502 @@
+/* Общие стили */
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #f9f9f9;
+	color: #333;
+}
+
+/* Цветовые переменные */
+:root {
+	--primary-color: #003366;
+	--secondary-color: #ffcc00;
+	--hover-color: #ff9900;
+	--text-color: #666;
+	--background-color: #fff;
+	--box-shadow-color: rgba(0, 0, 0, 0.1);
+	--border-color: #ccc;
+}
+
+/* Фиксированное меню в шапке */
+.fixed-header {
+	background-color: var(--primary-color);
+	color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 2px 4px var(--box-shadow-color);
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 30px;
+}
+
+.logo img {
+	height: 50px;
+}
+
+.horizontal-menu ul {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.horizontal-menu a {
+	color: white;
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.3s;
+}
+
+.horizontal-menu a:hover {
+	color: var(--secondary-color);
+}
+
+.icons {
+	display: flex;
+	gap: 10px;
+}
+
+#search-input {
+	padding: 5px;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+}
+
+#view-cart {
+	background-color: var(--secondary-color);
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+/* Основной контент */
+.content {
+	margin: 100px auto;
+	padding: 20px;
+	max-width: 1200px;
+	background: var(--background-color);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px var(--box-shadow-color);
+}
+
+.content-title {
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+/* Product List Grid */
+.product-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.product {
+	background: #f3f3f3;
+	padding: 15px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 2px 4px var(--box-shadow-color);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 8px var(--box-shadow-color);
+}
+
+.product-image {
+	height: 150px;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 10px;
+}
+
+.product-info h3 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.product-price {
+	font-weight: bold;
+	color: var(--primary-color);
+}
+
+.product-desc {
+	font-size: 14px;
+	color: var(--text-color);
+	margin-bottom: 10px;
+}
+
+.add-to-cart {
+	background-color: var(--secondary-color);
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+	background-color: var(--hover-color);
+}
+
+.cart-modal-close {
+	background-color: white;
+	color: white;
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.cart-modal-close img {
+	width: 20px;
+	height: 20px;
+}
+
+/* Вертикальное меню */
+.vertical-menu {
+	margin: 20px auto;
+	padding: 20px;
+	max-width: 1200px;
+	background: var(--primary-color);
+	color: white;
+	border-radius: 10px;
+}
+
+.vertical-menu h3 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: var(--secondary-color);
+}
+
+.vertical-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vertical-menu a {
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 5px 0;
+	transition: color 0.3s;
+}
+
+.vertical-menu a:hover {
+	color: var(--secondary-color);
+}
+
+/* Основные стили для футера */
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: var(--primary-color);
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	border-top: 1px solid #dee2e6;
+}
+
+/* Cart Modal */
+.cart-modal {
+	position: fixed;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--background-color);
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 4px 10px var(--box-shadow-color);
+	z-index: 1000;
+	width: 500px;
+	max-height: 90vh;
+	overflow-y: auto;
+	display: none;
+}
+
+.cart-modal-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart-modal h2 {
+	margin: 0 0 20px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.cart-items {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.cart-item p {
+	margin: 0;
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	flex-grow: 1;
+}
+
+.quantity-decrease,
+.quantity-increase {
+	width: 24px;
+	height: 24px;
+	background: var(--primary-color);
+	color: white;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 18px;
+	transition: background-color 0.3s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.quantity-decrease:hover {
+	background: rgb(179, 0, 0);
+}
+
+.quantity-increase:hover {
+	background: rgb(0, 179, 36);
+}
+
+#cart-actions {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+#order-btn,
+#delete-btn {
+	background: var(--primary-color);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: background-color 0.3s ease-in-out;
+	width: 48%;
+}
+
+#order-btn:hover {
+	background: var(--hover-color);
+}
+
+#delete-btn:hover {
+	background: #ff6600;
+}
+
+/* Зміна стилів для сторінки about.html */
+.about-us {
+	padding: 60px 20px;
+	background-color: var(--background-color);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px var(--box-shadow-color);
+	margin: 20px auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+.about-title {
+	font-size: 32px;
+	color: var(--primary-color);
+	margin-bottom: 20px;
+}
+
+.about-text {
+	font-size: 18px;
+	color: var(--text-color);
+	line-height: 1.6;
+}
+
+/* Доставка розділ */
+.delivery-section {
+	padding: 60px 20px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin: 20px auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+.delivery-title {
+	font-size: 32px;
+	color: #003366;
+	margin-bottom: 20px;
+}
+
+.delivery-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	text-align: left;
+}
+
+.delivery-info {
+	flex: 1 1 50%;
+	font-size: 16px;
+	color: #666;
+}
+
+.delivery-info strong {
+	color: #003366;
+}
+
+.delivery-form {
+	flex: 1 1 50%;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+textarea {
+	resize: none;
+}
+
+.submit-button {
+	background-color: #ffcc00;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+	background-color: #ff9900;
+}
+
+/* Контактний розділ */
+.contact-section {
+	padding: 60px 20px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin: 20px auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+.contact-title {
+	font-size: 32px;
+	color: #003366;
+	margin-bottom: 20px;
+}
+
+.contact-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	text-align: left;
+}
+
+.contact-info {
+	flex: 1 1 50%;
+	font-size: 16px;
+	color: #666;
+}
+
+.contact-info strong {
+	color: #003366;
+}
+
+.contact-form {
+	flex: 1 1 50%;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+textarea {
+	resize: none;
+}
+
+.submit-button {
+	background-color: #ffcc00;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+	background-color: #ff9900;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Контакти - ChairWorld</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="fixed-header">
+		<div class="header-container">
+			<div class="logo">
+				<a href="index.html"><img src="img/logo_negate.png" alt="ChairWorld Logo"></a>
+			</div>
+			<nav class="horizontal-menu">
+				<ul>
+					<li><a href="about.html">Про нас</a></li>
+					<li><a href="index.html">Каталог</a></li>
+					<li><a href="delivery.html">Доставка</a></li>
+					<li><a href="contact.html">Контакти</a></li>
+				</ul>
+			</nav>
+			<div class="icons">
+				<input type="text" id="search-input" placeholder="Пошук...">
+				<button id="view-cart"><i class="cart-icon">🛒</i></button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="contact-section">
+			<div class="container">
+				<h1 class="contact-title">Контактна інформація</h1>
+				<div class="contact-content">
+					<div class="contact-info">
+						<p><strong>Адреса:</strong> м. Харків, Україна, вул. Студентська, 5</p>
+						<p><strong>Email:</strong> info@chairworld.com</p>
+						<p><strong>Телефон:</strong> +380 (98) 888-98-98</p>
+					</div>
+					<div class="contact-form">
+						<h2>Зв'яжіться з нами</h2>
+						<form action="#">
+							<div class="form-group">
+								<label for="name">Ім'я</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="form-group">
+								<label for="message">Повідомлення</label>
+								<textarea id="message" name="message" rows="4" required></textarea>
+							</div>
+							<button type="submit" class="submit-button">Відправити</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div id="cart-modal" class="cart-modal">
+			<button class="cart-modal-close">
+				<img src="img/icon_cancel.svg" alt="Закрыть" />
+			</button>
+			<h2>Ваш кошик</h2>
+			<div id="cart-items"></div>
+			<p id="cart-total">Загальна сума: 0 грн</p>
+			<div id="cart-actions">
+				<button id="order-btn">Замовити</button>
+				<button id="delete-btn">Очистити кошик</button>
+			</div>
+		</div>
+
+
+	</main>
+
+	<footer>
+		<div class="footer">
+			<p>&copy; 2024 ChairWorld | Всі права захищені.</p>
+		</div>
+	</footer>
+
+	<script src="scripts/card.js"></script>
+	<script src="scripts/search.js"></script>
+</body>
+
+</html>
